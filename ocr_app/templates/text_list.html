@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Texts</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2>Stored Extracted Texts</h2>
+    <ul>
+        {% for text in texts %}
+        <li>
+            <strong>{{ text.image.name }}</strong> (Uploaded at {{ text.uploaded_at }}):<br>
+            <textarea readonly rows="10" cols="80">{{ text.text }}</textarea>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Upload another image</a>
+</body>
+</html>

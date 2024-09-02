@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracted Text</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="heading">Extracted Text</h2>
+        <textarea class="text-area" rows="20" cols="80">{{ text }}</textarea>
+        <div class="actions">
+            <a class="button" href="{% url 'home' %}">Upload another image</a>
+            <a class="button" href="{% url 'download_txt' %}?text={{ text }}">Download as Text File</a>
+            <a class="button" href="{% url 'download_pdf' %}?text={{ text }}">Download as PDF</a>
+        </div>
+    </div>
+</body>
+</html>
